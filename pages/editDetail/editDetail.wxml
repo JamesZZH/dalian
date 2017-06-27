@@ -1,0 +1,122 @@
+<page>
+  <view class="app">
+   <!--form开始-->
+   <form bindsubmit="formSubmit">
+      <view class="pub">
+          <view class="pubLeft {{showCart ?'pubSelected':''}}" bindtap="clickCart">                
+            <text>{{firsrCart}}</text>
+            <input type="text" value="{{num1}}" hidden="hidden" name="tid"/> 
+              <image src="{{showCart ? '../../images/arrowup.png' : '../../images/arrowdown.png'}}" class="topimg topimg1"></image>      
+          </view>
+          <view class="middleline"></view>
+          <view class="pubRight {{showArea ?'pubSelected':''}}" bindtap="clickArea">
+            <text>{{firsrArea}}</text>
+            <input type="text" value="{{num2}}" hidden="hidden" name="aid"/>
+            <image src="{{showArea ? '../../images/arrowup.png' : '../../images/arrowdown.png'}}" 
+              class="topimg topimg2"></image>
+          </view>
+      </view>
+      
+
+      <view class="middleview"></view>
+      <!--cart开始-->
+      <view class="cartbox" wx:if="{{showCart}}">
+          <view class="cart_select" hidden="{{cartChoice}}"></view>
+          <view wx:for="{{list}}"  class="conitem {{num1 == item.id?'selected':''}}" data-id="{{item.id}}"  data-cart="{{item.tname}}" bindtap="cartSelect">
+            {{item.tname}}
+          </view> 
+      </view>
+      <!--cart结束-->
+      <!--area开始-->
+      <view class="areabox" wx:if="{{showArea}}">
+          <view class="area_select" hidden="{{areaChoice}}"></view>
+          <view wx:for="{{areaList}}"  class="conitem {{num2 == item.id?'selected':''}}" data-id="{{item.id}}"  data-area="{{item.tname}}" bindtap="areaSelect">
+            {{item.tname}}
+            
+          </view>
+      </view>
+      <!--area结束-->
+
+
+
+
+      <!--详情页开始-->
+      <view class="detail_box" wx:if="{{showDetail}}">
+          <view class="middleview"></view>
+          <view class="group_top group_line">
+              <view class="group_left"><text>{{showInfo.area}}</text></view>
+              <input type="text" class="group_right" value="{{listInfo.area}}" name="area"/>
+          </view>
+          <view class="group_top group_line" wx:if="{{showMoneyBox}}">
+              <text class="group_left">{{showInfo.money}}</text>
+              <input type="text" value="{{listInfo.money}}" class="group_right" name="money"/>
+          </view>
+            <!--招聘地点-->
+          <view class="group_top" wx:if="{{showAreaBox}}">
+              <text class="group_left">{{showInfo.areabox}}</text>
+              <input type="text"  class="group_right" placeholder="{{showInfo.areaboxPlaceholder}}" class="group_right" name="dd" value="{{listInfo.dd}}"/>
+          </view>
+          <!--招聘地点结束-->
+          <view class="middleview shop_desc">
+            <text>{{showInfo.descript}}</text>
+          </view>
+          <view class="group_top shop_desc_input text_info">
+              <textarea  style="word-wrap : break-word;" value="{{listInfo.descript}}"  name="descript" auto-height/>
+          </view>
+
+
+          <view class="middleview shop_desc">
+            <text>图片：</text>
+          </view>
+          <view class="weui-cell__bd" style="padding:20rpx; z-index:10;">
+            
+              <block wx:for="{{piclist}}">
+                <view class="scroll-view-item_H">
+                  <image src="{{web_server}}{{item.thumb_logo}}" class="scroll_pic" ></image>
+                <view data-id="{{item}}" data-index="{{index}}" class="del-old" bindtap="del" data-id="{{item.id}}"><image src="../../images/close.png"></image>
+                </view>
+                
+                </view>
+              </block>
+           
+            <view class="weui-uploader__bd overflow-inherit" style="display:inline-block;">
+              <view class="weui-uploader__files overflow-inherit" style="float:left;">
+                <block wx:for="{{imageList}}" wx:for-item="image">
+                  <view class="weui-uploader__file" style="margin:5px;">
+                    <image class="weui-uploader__img" src="{{image}}"  data-src="{{image}}" bindtap="previewImage"></image>
+                    <view class="del" data-index="{{index}}" bindtap="delPic"><image src="../../images/close.png"></image></view>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box" style="margin:8rpx;" wx:if="{{uploadPicBtn}}">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+
+          <view class="middleview"></view>
+          <!--地址-->
+          <view class="group_top shop_desc_input group_line" bindtap="goMap">
+              <image src="../../images/address2.png" class="addr_icon"></image>
+              <textarea class="addr_word"   value="{{address}}" disabled="disabled" auto-height name="address"/>
+              <image src="../../images/arrowright.png" class="arrow_icon"></image>
+          </view>
+          <view class="group_top shop_desc_input">
+              <image src="../../images/telephone.png" class="tel_icon"></image>
+              <input type="text" value="{{listInfo.phone}}" class="tel_word" name="phone"/>
+          </view>
+        
+          <view class="pub_btn">
+              <button form-type="submit" >提交修改</button>
+          </view>
+
+
+      </view>
+
+
+    <!--详情页结束-->
+    </form>
+    <!--form结束-->
+</view>
+
+</page>

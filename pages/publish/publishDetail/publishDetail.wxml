@@ -1,0 +1,111 @@
+<page>
+  <view class="app">
+   <!--form开始-->
+   <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="pub">
+          <view class="pubLeft {{showCart ?'pubSelected':''}}" bindtap="clickCart">            
+            <text>{{firsrCart}}</text>
+              <image src="{{showCart ? '../../../images/arrowup.png' : '../../../images/arrowdown.png'}}" class="topimg topimg1"></image>      
+          </view>
+          <view class="middleline"></view>
+          <view class="pubRight {{showArea  ?'pubSelected':''}}" bindtap="clickArea">
+            <text>{{firsrArea}}</text>
+            <image src="{{showArea ? '../../../images/arrowup.png' : '../../../images/arrowdown.png'}}" 
+              class="topimg topimg2"></image>
+          </view>
+      </view>
+      
+
+      <view class="middleview"></view>
+      <!--cart开始-->
+      <view class="cartbox" wx:if="{{showCart}}">
+          <view wx:for="{{list}}" class="conitem {{num1 == item.id?'selected':''}}" data-id="{{item.id}}"  data-cart="{{item.tname}}" bindtap="cartSelect">
+            {{item.tname}}
+            
+          </view> 
+      </view>
+      <!--cart结束-->
+      <!--area开始-->
+      <view class="areabox" wx:if="{{showArea}}">
+          <view wx:for="{{areaList}}" class="conitem {{num2 == item.id?'selected':''}}" data-id="{{item.id}}"  data-area="{{item.tname}}" bindtap="areaSelect">
+            {{item.tname}}
+          </view>
+      </view>
+      <!--area结束-->
+
+
+
+
+      <!--详情页开始-->
+      <view class="detail_box" wx:if="{{showDetail}}">
+          <view class="middleview"></view>
+          <view class="group_top group_line">
+              <view class="group_left" >{{showInfo.area}}</view>
+              <input type="text" class="group_right" placeholder="{{showInfo.areaPlaceholder}}" name="area"/>
+              
+          </view>
+          <view class="group_top group_line" wx:if="{{showMoneyBox}}">
+              <text class="group_left">{{showInfo.money}}</text>
+              <input type="text"  class="group_right" placeholder="{{showInfo.moneyPlaceholder}}" class="group_right" name="money"/>
+          </view>
+
+          <!--招聘地点-->
+          <view class="group_top" wx:if="{{showAreaBox}}">
+              <text class="group_left">{{showInfo.areabox}}</text>
+              <input type="text"  class="group_right" placeholder="{{showInfo.areaboxPlaceholder}}" class="group_right" name="dd" />
+          </view>
+          <!--招聘地点-->
+  
+          <view class="middleview shop_desc" >
+            <text>{{showInfo.descript}}</text>
+          </view>
+          <view class="group_top shop_desc_input text_info">
+              <textarea  placeholder="{{showInfo.descriptPlaceholder}}" style="word-wrap : break-word;min-height:120rpx;" name="descript" auto-height />
+          </view>
+
+
+          <view class="middleview shop_desc">
+            <text>图片：</text>
+          </view>
+          <view class="weui-cell__bd" style="padding:20rpx;">
+            <view class="weui-uploader__bd overflow-inherit"   >
+              <view class="weui-uploader__files overflow-inherit">
+                <block wx:for="{{imageList}}" wx:for-item="image">
+                  <view class="weui-uploader__file" style="margin:5px;">
+                    <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                    <view class="del" data-index="{{index}}" bindtap="delPic"><image src="../../../images/close.png"></image></view>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box" style="margin:8rpx;" wx:if="{{uploadPicBtn}}">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+
+          <view class="middleview"></view>
+          <!--地址-->
+          <view class="group_top shop_desc_input group_line" bindtap="goMap">
+              <image src="../../../images/address2.png" class="addr_icon"></image>
+              <input class="addr_word"  auto-height  value="{{location}}" placeholder="请选择地址"/> 
+              <image src="../../../images/arrowright.png" class="arrow_icon"></image>
+          </view>
+          <view class="group_top shop_desc_input">
+              <image src="../../../images/telephone.png" class="tel_icon"></image>
+              <input type="text" placeholder="{{showInfo.phonePlaceholder}}" class="tel_word" name="phone"/>
+          </view>
+        
+          <view class="pub_btn">
+              <button form-type="submit" bindtap="form_reset">立即发布</button>
+          </view>
+
+
+      </view>
+
+
+    <!--详情页结束-->
+    </form>
+    <!--form结束-->
+</view>
+
+</page>

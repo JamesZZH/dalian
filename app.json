@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/adDetail/adDetail",
+    "pages/publish/publish",
+    "pages/publish/publishDetail/publishDetail",
+    "pages/new/new",
+    "pages/my/my",
+    "pages/edit/edit",
+    "pages/editDetail/editDetail"
+  ],
+  "window": {
+    "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#1A93DF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "大连同城供求信息"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#999999",
+    "selectedColor": "#00A7C9",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "iconPath": "images\/58b91382af5ce.png",
+        "selectedIconPath": "images\/58b91382af631.png",
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "iconPath": "images\/58b91382c80c2.png",
+        "selectedIconPath": "images\/58b91382c811f.png",
+        "text": "发布",
+        "pagePath": "pages/publish/publish"
+      },
+      {
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/accountAct.png",
+        "text": "我的",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

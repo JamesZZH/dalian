@@ -1,0 +1,196 @@
+page {
+  background-color: rgb(229, 229, 229);
+  margin-left: auto;
+}
+
+.float-action {
+  /*position: absolute;
+  bottom: 20px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px #AAA;
+  background: #1891D4;
+  z-index: 100;*/
+}
+
+.select-location {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+  background: #1296db;
+  position: fixed;
+  right: 30rpx;
+  bottom: 20rpx;
+  line-height: 1;
+  z-index: 10000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.body {
+  width: 750rpx;
+  position: absolute;
+  z-index: 1;
+}
+
+.select-location image {
+  height: 80rpx;
+  width: 80rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.place {
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.xscroll_bar {
+  overflow-y: hidden;
+  height: 88rpx;
+  line-height: 80rpx;
+  white-space: nowrap;
+  display: flex;
+  background: #fff;
+  /*border-bottom: 1rpx solid #bbb;*/
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.menu_item {
+  text-align: center;
+  font-size: 30rpx;
+  color: #7c7c7c;
+  display: inline-block;
+  border-bottom: 8rpx solid #fff;
+}
+
+.menu_item_border {
+  /*border-left: 1rpx solid #1296db;*/
+}
+
+/*目前暂时不支持伪类，边距的去除只能动态判断*/
+
+.xscroll_bar .active {
+  color: #1296db;
+  /*background: #1296db;*/
+  border-bottom: 8rpx solid #1296db !important;
+}
+
+/*list样式*/
+.detail{
+  display: flex;
+  padding: 10rpx 20rpx;
+  margin-top: 10rpx;
+  background: #fff;
+}
+.user_icon{
+  width: 80rpx;
+  text-align:center;
+
+}
+.user{
+  margin-top:10rpx;
+  width: 100rpx;
+  text-align: center;
+}
+.user_logo {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+  display: block;
+  margin:0 auto;
+
+}
+.user_name {
+  display: inline-block;
+  line-height: 30rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 22rpx;
+  color:rgb(178, 178, 178);
+}
+.user_detail{
+  flex: 1;
+}
+.user_detail_top{
+  /*margin-top:40rpx;*/
+}
+.user_job{
+  line-height: 30rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 28rpx;
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+}
+.user_money{
+  float: right;
+  margin-right: 30rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 30rpx;
+  color:rgb(255, 162, 0);
+}
+.user_detail_info text{
+  line-height: 30rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 26rpx;
+  color:rgb(96, 96, 96);
+}
+.user_detail_pic{
+  width: 620rpx;
+  margin-top: 24rpx;
+}
+.detail_pic {
+  height: 150rpx;
+  width: 200rpx;
+  margin-right: 5rpx;
+}
+.addr_date{
+  line-height: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 24rpx;
+  color:rgb(178, 178, 178);
+}
+.addr_info{
+  line-height: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 24rpx;
+  color:rgb(178, 178, 178);
+}
+.phone_button {
+  display: inline-block;
+  color: #d81e06;
+  margin-right: 10rpx;
+  border-radius: 10rpx;
+  float: right;
+}
+
+.phone_pic {
+  height: 44rpx;
+  width: 44rpx;
+  vertical-align: middle;
+}
+
+.addr_time,.addr_icon{
+  width: 23rpx;
+  height: 23rpx;
+  vertical-align: middle;
+}
+.addr_icon{
+  margin-left: 10rpx;
+}
+

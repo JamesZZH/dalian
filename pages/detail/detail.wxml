@@ -1,0 +1,70 @@
+<scroll-view scroll-x="true" class="xscroll_bar">
+<view class="menu_item {{0==activeIndex?'active':''}}" style="width:{{itemWidth}};"  bindtap="tabChange" data-index="0">
+    <view class="menu_item_border">
+      全部
+    </view>
+  </view>
+  <view class="menu_item {{item.id==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{area}}" bindtap="tabChange" data-index="{{item.id}}">
+    <view class="menu_item_border">
+      {{item.tname}}
+    </view>
+  </view>
+</scroll-view>
+
+<view class="con">
+   
+  <block wx:for="{{list}}">
+    <view class="detail">
+      <view class="user_icon">
+      <image src="{{item.pic}}" class="user_logo"></image>
+      <text class="user_name">{{item.nickname}}</text>
+    </view>
+    <view class="user_detail">
+      <view class="user_detail_top">
+        <text class="user_job"> {{item.area}}</text>
+        <text class="user_money">{{item.money}}</text>
+      </view>
+      <view class="user_detail_info" style="{{item.tid=='3'?'display:block':'display:none'}}">
+        <text class="detail_addr">[{{item.dd}}]</text>
+        <text>{{item.descript}}</text>
+      </view>
+      <view class="user_detail_info" style="{{item.tid!='3'?'display:block':'display:none'}}">
+        <text>{{item.descript}}</text>
+      </view>
+      <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
+        <block wx:for="{{item.pic_list}}" wx:for-item="image">
+          <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{item.web_server}}{{image.logo}}" src="{{item.web_server}}{{image.thumb_logo}}"></image>
+        </block>  
+      </view>
+      <view class="user_detail_addr">
+        <image src="../../images/time.png" class="addr_time"></image>
+        <text class="addr_date">{{item.addtime}}</text>
+        <image src="../../images/address.png" class="addr_icon" data-lng="{{item.lng}}" data-lat="{{item.lat}}" bindtap="showMap"></image>
+        <text class="addr_info" bindtap="showMap" data-lng="{{item.lng}}" data-lat="{{item.lat}}">{{item.address}}</text>
+        <view class="phone_button" data-phone="{{item.phone}}" bindtap="goPhone">
+          <image class="phone_pic" src="../../images/tel.png"></image>
+        </view>
+      </view>
+    </view>
+    </view>
+  </block>
+
+  <view class="tipbox" wx:if="{{showTipimg}}" >
+      <view class="tipimg" >
+        <image src="../../images/tipPic.png"></image>
+      </view>
+  </view>
+  <view class="tipBottom" wx:if="{{showTipword}}">
+       <text>{{tipWord}}</text>
+  </view>
+   <view class="tipBottom2"></view>
+  <view class="pub_btn" wx:if="{{showBtn}}" bindtap="goPub">
+      <button>立即发布</button>
+  </view>
+  <view class="about_bottom" wx:if="{{showCountry}}">
+    <view><text>小号科技提供技术支持</text></view>
+    <view>
+      <text>http://xiaohao.51cptj.com/</text>
+    </view>
+  </view>
+</view>

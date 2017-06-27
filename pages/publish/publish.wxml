@@ -1,0 +1,39 @@
+<page>
+  <view class="app">
+      <view class="pub">
+          <view class="pubLeft {{showCart ?'pubSelected':''}}" bindtap="clickCart">            
+            <text>{{firsrCart}}</text>
+              <image src="{{showCart ? '../../images/arrowup.png' : '../../images/arrowdown.png'}}" class="topimg topimg1"></image>      
+          </view>
+          <view class="middleline"></view>
+          <view class="pubRight {{showArea?'pubSelected':''}}" bindtap="clickArea">
+            <text>{{firsrArea}}</text>
+            <image src="{{showArea ? '../../images/arrowup.png' : '../../images/arrowdown.png'}}" 
+              class="topimg topimg2"></image>
+          </view>
+      </view>
+      
+
+      <view class="middleview"></view>
+      <!--cart开始-->
+      <view class="cartbox" wx:if="{{showCart}}">
+          <view wx:for="{{list}}" class="conitem {{num1 == item.id?'selected':''}}" data-id="{{item.id}}"  data-cart="{{item.tname}}" bindtap="cartSelect">
+            {{item.tname}}
+          </view> 
+      </view>
+      <!--cart结束-->
+      <!--area开始-->
+      <view class="areabox" wx:if="{{showArea}}">
+          <view wx:for="{{areaList}}" class="conitem {{num2 == item.id?'selected':''}}" data-id="{{item.id}}"  data-area="{{item.tname}}" bindtap="areaSelect">
+            {{item.tname}}
+          </view>
+      </view>
+      <!--area结束-->   
+</view>
+<view class="about_bottom">
+    <view><text>小号科技提供技术支持</text></view>
+    <view>
+      <text>http://xiaohao.51cptj.com/</text>
+    </view>
+  </view>
+</page>

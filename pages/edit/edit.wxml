@@ -1,0 +1,43 @@
+
+
+
+<block wx:for="{{list}}">
+  <view class="detail">
+    <view class="user_icon">
+    <image src="{{item.pic}}" class="user_logo"></image>
+    <text class="user_name">{{item.nickname}}</text>
+  </view>
+  <view class="user_detail">
+    <view class="user_detail_top">
+      <text class="user_job"> {{item.area}}</text>
+      <text class="user_money">{{item.money}}</text>
+    </view>
+    <view class="user_detail_info">
+       <text>{{item.descript}}</text>
+    </view>
+    <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
+      <block wx:for="{{item.pic_list}}" wx:for-item="image">
+        <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{item.web_server}}{{image.logo}}" src="{{item.web_server}}{{image.thumb_logo}}"></image>
+      </block>  
+    </view>
+    <view class="user_detail_addr">
+      <image src="../../images/time.png" class="addr_time"></image>
+      <text class="addr_date">{{item.addtime}}</text>
+      <image src="../../images/address.png" class="addr_icon"></image>
+      <text class="addr_info">{{item.address}}</text>
+      <!--删除和编辑-->
+
+      <view class="phone_button" data-id="{{item.id}}" bindtap="del" style="line-height: 25px;">
+           <!--删除按钮-->
+          <image class="phone_pic" src="../../images/delete.png"></image>
+      </view>
+      <view class="phone_button" data-id="{{item.id}}" bindtap="edit" style="line-height: 25px;margin-left:10rpx;">
+          <!--编辑按钮-->
+          <image class="phone_pic" src="../../images/edit.png"></image> 
+      </view>
+      
+
+    </view>
+  </view>
+  </view>
+</block>

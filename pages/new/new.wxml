@@ -1,0 +1,80 @@
+<page>
+  <view class="app">
+    <view class="ele-container">
+      <form style="background-color:rgba(0, 0, 0, 0);opacity:1;margin-left:auto;" class="element form-vessel" bindsubmit="formSubmit">
+        <view class="ele-container">
+          <view class="element breakline"></view>
+        </view>
+
+
+
+
+        <view class="ele-container">
+          <view style="background-color:rgba(0, 0, 0, 0);opacity:1;min-height:auto;margin-left:auto;" class="element layout-vessel clearfix">
+            <view class="cell" style="width:27%;margin-left:auto;">
+              <view class="ele-container">
+                <text style="background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:2px;color:rgb(0, 0, 0);font-size:16px;height:22px;line-height:22px;margin-left:11px;margin-top:9px;opacity:1;text-align:left;" class="element text">{{bac.area}}</text>
+              </view>
+              <view class="ele-container">
+                <text style="background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:2px;color:rgb(0, 0, 0);font-size:16px;height:22px;line-height:22px;margin-left:11px;margin-top:28px;opacity:1;text-align:left;" class="element text">{{bac.money}}</text>
+              </view>
+              <view class="ele-container">
+                <text style="background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:2px;color:rgb(0, 0, 0);font-size:16px;height:22px;line-height:22px;margin-left:11px;margin-top:51px;opacity:1;text-align:left;" class="element text">{{bac.descript}}</text>
+              </view>
+              <view class="ele-container">
+                <text style="background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:2px;color:rgb(0, 0, 0);font-size:16px;height:22px;line-height:22px;margin-left:11px;margin-top:46px;opacity:1;text-align:left;" class="element text">{{bac.phone}}</text>
+              </view>
+              <view class="ele-container">
+                <text style="background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:2px;color:rgb(0, 0, 0);font-size:16px;height:22px;line-height:22px;margin-left:11px;margin-top:46px;opacity:1;text-align:left;" class="element text">选择图片</text>
+              </view>
+            </view>
+            <view class="cell border-cell" style="width:73%;border-left-style:none;border-left-width:2px;border-color:rgb(102, 102, 102);margin-left:auto;">
+              <view class="ele-container">
+                <view style="margin-top:0;margin-left:3px;width:257px;height:41px;margin-right:auto;opacity:1;border-radius:5px;" class="element input-ele js-form-ele must">
+                  <input name="area" placeholder="{{bac.areaPlaceholder}}" type="text">
+                  </input>
+                </view>
+              </view>
+              <view class="ele-container">
+                <view style="margin-top:9px;margin-left:3px;width:257px;height:41px;margin-right:auto;opacity:1;border-radius:5px;" class="element input-ele js-form-ele must">
+                  <input name="money" placeholder="{{bac.moneyPlaceholder}}" type="text">
+                  </input>
+                </view>
+              </view>
+              <view class="ele-container">
+                <view style="margin-top:9px;opacity:1;border-radius:5px;width:257px;height:82px;margin-left:3px;line-height:35px;margin-right:auto;" class="element textarea-ele js-form-ele must">
+                  <textarea name="descript" placeholder="{{bac.descriptPlaceholder}}">
+                  </textarea>
+                </view>
+              </view>
+              <view class="ele-container">
+                <view style="margin-top:9px;margin-left:3px;width:257px;height:41px;margin-right:auto;opacity:1;border-radius:5px;" class="element input-ele js-form-ele must">
+                  <input name="phone" placeholder="{{bac.phonePlaceholder}}" type="text">
+                  </input>
+                </view>
+              </view>
+              <view class="weui-cell__bd">
+                <view class="overflow-inherit">
+                  <view class="weui-uploader__input-box" style="margin-top:9px;margin-left:3px;margin-right:9px;opacity:1;border-radius:5px;">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                  <view class="weui-uploader__files overflow-inherit" style="margin-top:9px;margin-left:3px;margin-right:auto;opacity:1;border-radius:5px;">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image style="margin-top:9px;margin-left:3px;margin-right:auto;opacity:1;border-radius:5px;" class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="ele-container">
+          <button style="background-color:rgb(26, 147, 223);border-color:rgb(34, 34, 34);border-radius:5px;border-style:none;color:rgb(255, 255, 255);font-size:21px;height:55px;line-height:55px;margin-left:auto;margin-right:auto;margin-top:21px;opacity:1;text-align:center;width:351px;"
+          class="button background-ele" form-type="submit" disabled="{{disabled}}"> 发布 </button>
+        </view>
+      </form>
+    </view>
+  </view>
+</page>

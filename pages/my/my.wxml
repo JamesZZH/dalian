@@ -1,0 +1,44 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view>
+<view class="wrap">
+  <view class="app">
+    <view class="ele-container">
+      <image class="show-bac" src="../../images/bac.png"></image>
+      <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
+        <view class="show-view">
+          <image class="cover-thumb" src="{{list.pic}}"></image>
+          <view class="nickname">{{list.nickname}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+     <view class="weui-cells weui-cells_after-title">
+        <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
+          <!--<view class="weui-cell__hd">
+            <image src="../../images/selected-collection.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>-->
+          <view class="weui-cell__bd">
+            <image src="../../images/feiji.png" class="feiji_icon"></image>
+            <text class="feiji_word">我的发布</text>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+  </view>
+  <view class="about">
+    <view class="about_info">
+    </view>
+    <view class="about_tel">
+      <template is="wxParse" data="{{wxParseData:xiaoquxx.nodes}}"/> 
+    </view>
+  </view>
+  <view class="about_bottom">
+    <view><text>小号科技提供技术支持</text></view>
+    <view>
+      <text>http://xiaohao.51cptj.com/</text>
+    </view>
+  </view>
+  
+  
+  </view>
+</view>

@@ -1,0 +1,177 @@
+@charset 'utf-8';
+.wrap{
+  width: 100%;
+  background: #efeff4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.app .ele-container {
+  height: 375rpx;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  clear: both;
+ 
+
+}
+
+.app .user-center {
+  width: 100% !important;
+  height: auto !important;
+  color: #fff;
+  font-size: 16px;
+}
+
+.background-ele {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.show-bac {
+  height: 367rpx;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.show-logo {
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  font-size: 18px;
+  height: 380px;
+  margin-left: auto;
+  z-index: 2;
+  position: absolute;
+}
+
+.app .user-center.with-horizontal-view .show-view {
+  height: 375rpx;
+  width: 750rpx;
+  text-align: center;
+}
+
+.app .user-center .show-view .empty-span {
+  display: inline-block;
+  width: 58.59375rpx;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.app .user-center .show-view .cover-thumb {
+  width: 123rpx;
+  height: 123rpx;
+  margin-top: 91rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.app .user-center .show-view .nickname {
+  vertical-align: middle;
+  margin-top: 20rpx;
+  color: rgb(255, 255, 255);
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 30rpx;
+}
+
+.app .user-center .show-view .icon-rightarrow {
+  position: absolute;
+  top: 50%;
+  right: 23.4375rpx;
+  margin-top: -35.15625rpx;
+  width: 70.3125rpx;
+  height: 70.3125rpx;
+  line-height: 70.3125rpx;
+  font-size: 46.875rpx;
+}
+
+.app .user-center.with-horizontal-view .horizontal-view {
+  display: block;
+}
+
+.app .user-center .horizontal-view {
+  border-bottom: 1px solid #eee;
+}
+
+.app .usercenter-mode1 .horizontal-router-container1 {
+  overflow: hidden;
+  background: #fff;
+  font-size: 14px;
+}
+
+.app .usercenter-mode1 .horizontal-router-container1 label {
+  float: left;
+  font-size: 20px;
+  line-height: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.app .usercenter-mode1 .horizontal-router-container1 view {
+  line-height: 30px;
+  height: 30px;
+  padding: 7px 10px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.app .usercenter-mode1 .horizontal-router-container1 .icon-rightarrow {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  line-height: 20px;
+  font-size: 16px;
+  float: right;
+  color: #aaa;
+  margin-top: 6px;
+  margin-right: 0;
+}
+
+Page {
+  background: #ddd;
+}
+
+.m-t-20 {
+  margin-top: 200rpx;
+}
+
+.collection-pic {
+  width: 50rpx !important;
+  height: 50rpx;
+}
+
+.feiji_icon{
+  width: 34rpx;
+  height: 34rpx;
+  vertical-align: middle;
+}
+
+.feiji_word{
+   line-height: 60rpx;
+   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+   font-size: 30rpx;
+   color:rgb(0, 0, 0);
+   margin-left:12rpx ;
+}
+.about{
+   padding:40rpx 30rpx;
+   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+   font-size: 28rpx;
+   color:rgb(72, 72, 72);
+   position: absolute;
+   top: 450rpx;
+   z-index: 100;
+}
+.about_bottom{
+  position: absolute;
+  bottom: 32rpx;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 26rpx;
+  color:rgb(169, 169, 169);
+}

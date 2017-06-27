@@ -1,0 +1,24 @@
+/* pages/new/new.wxss */
+.breakline{
+  border-width:1px;
+  border-bottom-style:solid;
+  margin-top:5px;
+  margin-left:auto;
+  margin-right:auto;
+  width:375px;
+  border-bottom-color:rgb(204, 204, 204);
+}
+.form_left{
+  background-color:rgba(0, 0, 0, 0);
+  border-color:rgb(34, 34, 34);
+  border-style:none;
+  border-width:2px;
+  color:rgb(0, 0, 0);
+  font-size:16px;
+  height:22px;
+  line-height:22px;
+  margin-left:11px;
+  margin-top:9px;
+  opacity:1;
+  text-align:left;
+}
